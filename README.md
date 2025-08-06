@@ -76,7 +76,7 @@ Bu proje MIT Lisansı ile lisanslanmıştır.
 
 Geliştirici: İsmail  
 Email: info@caliskanbilisim.net  
-Web: [caliskanbilisim.net](https://caliskanbilisim.net)
+Web: [Çalışkan Bilişim Web Tasarım](https://caliskanbilisim.net)
 
 ---
 
