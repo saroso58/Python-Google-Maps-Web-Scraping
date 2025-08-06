@@ -25,3 +25,59 @@ Bu proje, **Google Haritalar** üzerinde belirttiğiniz şehir ve iş koluna gö
 
 ```bash
 pip install selenium pandas openpyxl
+```
+
+3. [ChromeDriver](https://sites.google.com/chromium.org/driver/) indirilmeli ve `CHROMEDRIVER_PATH` değişkeni uygun şekilde ayarlanmalı  
+4. `USER_AGENT` ve `KAYIT_DOSYASI` gibi ayarları isteğe göre düzenleyin  
+
+---
+
+## Kullanım
+
+1. Programı çalıştırın  
+2. Açılan pencerede **Şehir / Semt** ve **İş kolu** bilgilerini girin  
+3. **Başlat** butonuna basarak işlemi başlatın  
+4. İsterseniz **Durdur** butonuyla işlemi durdurabilirsiniz  
+5. İşlem tamamlandığında Excel dosyasına kaydedildiğine dair bilgi alırsınız  
+
+---
+
+## Kodun Detayları ve İşleyişi
+
+- Program, Google Haritalar'da belirtilen arama kelimeleriyle sonuçları getirir ve listeden tek tek firmaların detaylarını açar.  
+- Firma adı, telefon numarası ve varsa web sitesi bilgilerini çeker.  
+- Telefon numarası regex ile doğrulanır; numara yoksa o firma atlanır.  
+- Harita yakınlaştırılır ve "Harita hareket ettiğinde sonuçları güncelle" seçeneği açılır.  
+- Sol paneldeki firma listesi belirli aralıklarla scroll edilerek yeni sonuçların yüklenmesi sağlanır.  
+- Her firma seçildikten sonra "Bu bölgede ara" butonuna tıklanarak bölgedeki yeni firmalar listeye eklenir.  
+- Ziyaret edilen firmalar tekrar kaydedilmez.  
+- Veriler pandas kullanılarak Excel dosyasına yazılır, mevcut dosya varsa üstüne eklenir ve duplicate kayıtlar temizlenir.  
+- Bot, arayüzü kilitlemeden threading ile arka planda çalışır.  
+
+---
+
+## Geliştirme Önerileri
+
+- Arama kelimelerini liste olarak alıp otomatik sırayla aratmak  
+- Daha sağlam bekleme mekanizmaları (`WebDriverWait`) eklemek  
+- Log dosyası tutmak  
+- Web API ile lisans / kullanım kontrolü eklemek  
+- Arayüzü geliştirmek, kayıt dosyasını seçilebilir yapmak  
+
+---
+
+## Lisans
+
+Bu proje MIT Lisansı ile lisanslanmıştır.
+
+---
+
+## İletişim
+
+Geliştirici: İsmail  
+Email: info@caliskanbilisim.net  
+Web: [caliskanbilisim.net](https://caliskanbilisim.net)
+
+---
+
+*Teşekkürler!*
